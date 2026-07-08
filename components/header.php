@@ -71,6 +71,18 @@
                     <a href="?route=login"
                         class="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-4 py-2 shrink-0 transition-colors shadow-sm">Login</a>
                 <?php endif; ?>
+                <?php if ($isAdmin ?? false): ?>
+                    <a href="?route=users" class="text-gray-700 hover:text-blue-700 font-medium text-sm">
+                        Users
+                    </a>
+                    <a href="?route=orders" class="text-gray-700 hover:text-blue-700 font-medium text-sm">
+                        Transaksi
+                    </a>
+                <?php elseif (isset($_SESSION['user_id'])): ?>
+                    <a href="?route=orders" class="text-gray-700 hover:text-blue-700 font-medium text-sm">
+                        Riwayat Beli
+                    </a>
+                <?php endif; ?>
             </div>
 
         </div>
