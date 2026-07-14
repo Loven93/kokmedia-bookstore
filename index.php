@@ -434,7 +434,9 @@ switch ($route) {
             (int) ($_POST['id'] ?? 0),
             $_POST['status'] ?? ''
         );
-        $_SESSION['message'] = $result ? "Status order diperbarui." : "Gagal memperbarui status.";
+        $_SESSION['message'] = $result
+            ? "Status order berhasil diperbarui."  // ← tambah kata "berhasil"
+            : "Gagal memperbarui status.";
         header("Location: ?route=orders");
         exit;
 
